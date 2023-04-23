@@ -1,0 +1,133 @@
+<main class="container-xxl">
+  <section class="mini-header mb-4">
+    <div>
+      <p class="mb-1" style="font-size: 17px">{{ time }}</p>
+      <h1>Welcome back, Pharmacist!</h1>
+    </div>
+    <button class="circle-button medium-square-btn green-btn">
+      <img width="20px" src="../../assets/icons/bell.png" alt="bell" />
+    </button>
+  </section>
+  <header class="position-relative green-header">
+    <h2>Dashboard</h2>
+    <p class="mb-0">add, modify or remove any patient/product</p>
+    <img
+      class="header-image"
+      src="../../assets/images/drugs-image.png"
+      alt="drugs-img"
+    />
+  </header>
+  <section class="tools my-4">
+    <dropdown
+      (onValueChange)="setDDOption($event)"
+      [values]="dropdownValues"
+    ></dropdown>
+    <button
+      class="theme-button-red mx-3"
+      *ngIf="checkedCheckboxes != 0"
+      (click)="deleteItems()"
+    >
+      {{ checkedCheckboxes >= 2 ? "remove all" : "remove" }}
+    </button>
+  </section>
+  <ng-container [ngSwitch]="selectedDDOption">
+    <section class="row" *ngSwitchCase="'all'">
+      <div class="col">
+        <table-list
+          [headerTitle]="'Patients'"
+          [tableContent]="'patient'"
+          [titles]="smallPatientsTableTitles"
+          [data]="patients"
+        >
+          <tr *ngFor="let patient of patients; let i = index">
+            <td>
+              <input
+                type="checkbox"
+                (change)="onCheckboxChange($event, i, 'patient')"
+              />
+            </td>
+            <td>{{ patient.cnp }}</td>
+            <td>{{ patient.firstName }}</td>
+            <td>{{ patient.lastName }}</td>
+            <td>
+              <button class="circle-button small-square-btn green-btn">
+                M
+              </button>
+            </td>
+          </tr>
+        </table-list>
+      </div>
+      <div class="col">
+        <table-list
+          [headerTitle]="'Drugs'"
+          [tableContent]="'drug'"
+          [titles]="smallDrugsTableTitles"
+        >
+          <tr *ngFor="let drug of drugs; let i = index">
+            <td>
+              <input
+                type="checkbox"
+                (change)="onCheckboxChange($event, i, 'drug')"
+              />
+            </td>
+            <td>{{ drug.id }}</td>
+            <td>{{ drug.name }}</td>
+            <td>{{ drug.price + "$" }}</td>
+            <td>
+              <button class="circle-button small-square-btn green-btn">
+                M
+              </button>
+            </td>
+          </tr>
+        </table-list>
+      </div>
+    </section>
+    <table-list
+      *ngSwitchCase="'patients'"
+      [headerTitle]="'Patients'"
+      [tableContent]="'patient'"
+      [titles]="detailedPatientsTableTitles"
+      [data]="patients"
+    >
+      <tr *ngFor="let patient of patients; let i = index">
+        <td>
+          <input
+            type="checkbox"
+            (change)="onCheckboxChange($event, i, 'patient')"
+          />
+        </td>
+        <td>{{ patient.cnp }}</td>
+        <td>{{ patient.firstName }}</td>
+        <td>{{ patient.lastName }}</td>
+        <td>{{ patient.phone }}</td>
+        <td>{{ patient.address }}</td>
+        <td>
+          <button class="circle-button small-square-btn green-btn">M</button>
+        </td>
+      </tr>
+    </table-list>
+    <table-list
+      *ngSwitchCase="'drugs'"
+      [headerTitle]="'Drugs'"
+      [tableContent]="'drug'"
+      [titles]="detailedDrugsTableTitles"
+    >
+      <tr *ngFor="let drug of drugs; let i = index">
+        <td>
+          <input
+            type="checkbox"
+            (change)="onCheckboxChange($event, i, 'drug')"
+          />
+        </td>
+        <td>{{ drug.id }}</td>
+        <td>{{ drug.name }}</td>
+        <td>{{ drug.price + "$" }}</td>
+        <td>{{ drug.description }}</td>
+        <td>{{ drug.stock }}</td>
+        <td>
+          <button class="circle-button small-square-btn green-btn">M</button>
+        </td>
+      </tr>
+    </table-list>
+  </ng-container>
+</main>

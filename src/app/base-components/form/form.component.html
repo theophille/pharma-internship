@@ -1,0 +1,99 @@
+<form class="form" (ngSubmit)="getNgForm(f)" #f="ngForm">
+  <ng-container *ngFor="let row of data">
+    <div class="row">
+      <ng-container *ngFor="let col of row">
+        <ng-container [ngSwitch]="col.type">
+          <div class="col mb-3" style="padding: 0" *ngSwitchCase="'email'">
+            <input
+              [type]="col.type"
+              [placeholder]="col.placeholder"
+              [name]="col.name"
+              [required]="col.mandatory"
+              style="width: 100%"
+              ngModel
+              email
+              #email="ngModel"
+            />
+            <p
+              class="error mx-3 mt-2"
+              *ngIf="!email.valid && (isSubmitted || email.touched)"
+            >
+              Email is invalid
+            </p>
+          </div>
+          <div class="col mb-3" style="padding: 0" *ngSwitchCase="'tel'">
+            <input
+              [type]="col.type"
+              [placeholder]="col.placeholder"
+              [name]="col.name"
+              [required]="col.mandatory"
+              style="width: 100%"
+              ngModel
+              [phone]="true"
+              #phone="ngModel"
+            />
+            <p
+              class="error mx-3 mt-2"
+              *ngIf="!phone.valid && (isSubmitted || phone.touched)"
+            >
+              Phone is invalid
+            </p>
+          </div>
+          <div class="col mb-3" style="padding: 0" *ngSwitchCase="'id'">
+            <input
+              [type]="col.type"
+              [placeholder]="col.placeholder"
+              [name]="col.name"
+              [required]="col.mandatory"
+              style="width: 100%"
+              ngModel
+              [cnp]="true"
+              #cnp="ngModel"
+            />
+            <p
+              class="error mx-3 mt-2"
+              *ngIf="!cnp.valid && (isSubmitted || cnp.touched)"
+            >
+              CNP is invalid
+            </p>
+          </div>
+          <div class="col mb-3" style="padding: 0" *ngSwitchDefault>
+            <input
+              [type]="col.type"
+              [placeholder]="col.placeholder"
+              [name]="col.name"
+              [required]="col.mandatory"
+              style="width: 100%"
+              ngModel
+              #required="ngModel"
+            />
+            <p
+              class="error mx-3 mt-2"
+              *ngIf="!required.valid && (isSubmitted || required.touched)"
+            >
+              Required field
+            </p>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+    <ng-content></ng-content>
+  </ng-container>
+  <!-- <ng-container *ngFor="let row of data">
+    <div class="row">
+      <input
+        *ngFor="let col of row"
+        class="col mb-3"
+        [type]="col.type"
+        [placeholder]="col.placeholder"
+        [name]="col.name"
+        [required]="col.mandatory"
+        [email]="col.type === 'email'"
+        [phone]="col.type === 'tel'"
+        [cnp]="col.name === 'cnp'"
+        ngModel
+      />
+    </div>
+    <ng-content></ng-content>
+  </ng-container> -->
+</form>

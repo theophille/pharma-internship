@@ -1,0 +1,152 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1450px
+);
+$font-family-sans-serif: "Poppins", sans-serif;
+$headings-font-weight: 600;
+    
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+h3 {
+    color: $theme-green;
+}
+
+h5 {
+    background-color: $theme-green;
+    border-radius: 7px;
+    color: $white;
+    font-size: 16px;
+    padding: 6px;
+    text-align: center;
+}
+
+span {
+    color: $theme-green;
+}
+
+.theme-button-green {
+    background-color: $theme-green;
+    border-radius: 20px;
+    color: $white;
+    font-weight: 600;
+}
+
+.theme-button-red {
+    background-color: $theme-red;
+    border: none;
+    border-radius: 20px;
+    color: $white;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.theme-button-green:hover {
+    background-color: $theme-dark-green;
+    color: $white;
+}
+
+.theme-button-red:hover {
+    background-color: $theme-dark-red;
+    color: $white;
+}
+
+.circle-button {
+    border: none;
+    border-radius: 100%;
+    transition: 200ms;
+}
+
+.green-btn {
+    background-color: $theme-green;
+    color: $white;
+    font-weight: 600;
+}
+
+.medium-square-btn {
+    height: 50px;
+    width: 50px;
+}
+
+.small-square-btn {
+    height: 30px;
+    width: 30px;
+}
+
+.circle-button:hover {
+    background-color: $theme-dark-green;
+}
+
+.mini-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-theme-button-green {
+    background-color: $theme-green;
+    border: none;
+    border-radius: 10px;
+    color: $white;
+    text-align: center;
+    transition: all 0.2s ease;
+    padding: 10px 20px;
+}
+
+.form-theme-button-green-stroke {
+    background-color: transparent;
+    border: 1px solid $theme-green;
+    border-radius: 10px;
+    color: $theme-green;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+    padding: 10px 20px;
+}
+
+.form-theme-button-green-stroke:hover {
+    border: 1px solid $theme-dark-green;
+    background-color: $theme-dark-green;
+    color: $white;
+}
+
+.form-theme-button-green:hover {
+    background-color: $theme-dark-green;
+}
+
+.input-maxwid-nopad {
+    width: 100%;
+    padding: 0;
+}
+
+.error {
+    color: $theme-red;
+    margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $theme-gray;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $theme-green;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -1,0 +1,20 @@
+@import '../../../global-styles/variables.scss';
+
+.form {
+    padding: 4px;
+
+    input {
+        background-color: $theme-gray;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+
+    .col:first-child {
+        margin-right: 10px;
+    }
+
+    .col:only-child {
+        margin-right: 0;
+    }
+}

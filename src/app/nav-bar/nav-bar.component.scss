@@ -1,0 +1,23 @@
+@import '../../global-styles/variables.scss';
+
+.logo {
+    height: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #707070;
+}
+
+.active-page {
+    color: $theme-green;
+    font-weight: 600;
+}
+
+li {
+    transition: all 0.2s ease;
+}
+
+li:hover {
+    background-color: $theme-gray;
+}

@@ -1,0 +1,30 @@
+@import '../global-styles/variables.scss';
+
+.left-delimiter {
+    border-right: 2px solid $theme-gray;
+    line-height: 18px;
+    position: fixed;
+}
+
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.nav-section {
+    width: 300px;
+}
+
+.main-section {
+    padding-left: 350px;
+}
+
+.nav-height {
+    height: 700px;
+}
+
+.main-container {
+    margin-top: 100px;
+}

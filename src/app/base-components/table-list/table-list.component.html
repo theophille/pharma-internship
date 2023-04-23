@@ -1,0 +1,24 @@
+<article class="data-table">
+  <div class="table-title-area mb-4">
+    <h3>{{ headerTitle }}</h3>
+    <button
+      [routerLink]="['/add']"
+      [queryParams]="{ type: tableContent }"
+      class="btn theme-button-green"
+    >
+      add
+    </button>
+  </div>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th *ngFor="let name of tableHeaderNames">{{ name }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-content></ng-content>
+      </tbody>
+    </table>
+  </div>
+</article>

@@ -1,0 +1,28 @@
+@import '../../global-styles/variables.scss';
+
+.green-header {
+    background-color: $theme-green;
+    border-radius: 20px;
+    color: $white;
+    padding: 35px 45px;
+}
+
+.header-image {
+    width: 290px;
+    position: absolute;
+    top: 0;
+    right: 40px;
+}
+
+.tools {
+    display: flex;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid $theme-gray;
+}
+
+td {
+    height: 70px;
+    word-wrap: break-word;
+}

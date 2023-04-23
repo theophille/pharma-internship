@@ -1,0 +1,33 @@
+<main class="container-xxl cb">
+  <section class="mini-header mb-4">
+    <div>
+      <h1>
+        Add
+        <span>
+          a
+          {{
+            params.type.charAt(0).toUpperCase() +
+              params.type.slice(1, params.type.length)
+          }}
+        </span>
+      </h1>
+      <p>Fill in the form below to add a new patient</p>
+    </div>
+    <button class="circle-button medium-square-btn green-btn">
+      <img width="20px" src="../../assets/icons/bell.png" alt="bell" />
+    </button>
+  </section>
+  <app-form
+    (formData)="onSubmit($event)"
+    [isSubmitted]="submitPressed"
+    [data]="formArray"
+  >
+    <div class="row">
+      <input
+        class="col form-theme-button-green"
+        type="submit"
+        [value]="'Add new ' + params.type"
+      />
+    </div>
+  </app-form>
+</main>

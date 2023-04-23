@@ -1,0 +1,6 @@
+<div class="dropdown-container">
+  <select (change)="onValueChange($event)" name="option" id="option">
+    <option *ngFor="let value of values" [value]="value">{{ value }}</option>
+  </select>
+  <img src="../../assets/icons/dropdown-arrow.svg" alt="dropdown-arrow" />
+</div>

@@ -18,12 +18,17 @@ import { CnpValidatorDirective } from './directives/validators/cnp.directive';
 
 import { PatientsService } from './services/patients.service';
 import { DrugsService } from './services/drugs.service';
+import { PatientComponent } from './patient/patient.component';
+import { DrugComponent } from './drug/drug.component';
+import { PositiveNumberValidatorDirective } from './directives/validators/positive-number.directive';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'add', component: AddComponent },
   { path: 'orders-history', component: AddComponent },
-  { path: 'modify/:id', component: ModifyComponent }
+  { path: 'modify/:id', component: ModifyComponent },
+  { path: 'patient/:id', component: PatientComponent },
+  { path: 'drug/:id', component: DrugComponent }
 ];
 
 @NgModule({
@@ -37,7 +42,10 @@ const appRoutes: Routes = [
     FormComponent,
     PhoneValidatorDirective,
     CnpValidatorDirective,
-    ModifyComponent
+    ModifyComponent,
+    PatientComponent,
+    DrugComponent,
+    PositiveNumberValidatorDirective
   ],
   imports: [
     BrowserModule,

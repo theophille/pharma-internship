@@ -17,12 +17,3 @@
 .tools {
     display: flex;
 }
-
-tr:not(:last-child) {
-    border-bottom: 1px solid $theme-gray;
-}
-
-td {
-    height: 70px;
-    word-wrap: break-word;
-}

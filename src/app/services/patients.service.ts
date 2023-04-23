@@ -25,4 +25,8 @@ export class PatientsService {
   modifyPatientData(id: number, newData: Patient) {
     this.patients[id] = newData;
   }
+
+  setPatients(patients: Array<Patient>): void {
+    this.patients = patients;
+  }
 }

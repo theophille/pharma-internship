@@ -46,10 +46,10 @@
                 (change)="onCheckboxChange($event, i, 'patient')"
               />
             </td>
-            <td>{{ patient.cnp }}</td>
-            <td>{{ patient.firstName }}</td>
-            <td>{{ patient.lastName }}</td>
-            <td>
+            <td [routerLink]="['/patient', i]">{{ patient.cnp }}</td>
+            <td [routerLink]="['/patient', i]">{{ patient.firstName }}</td>
+            <td [routerLink]="['/patient', i]">{{ patient.lastName }}</td>
+            <td [routerLink]="['/patient', i]">
               <button
                 [routerLink]="['/modify', i]"
                 [queryParams]="{ type: 'patient' }"
@@ -74,9 +74,9 @@
                 (change)="onCheckboxChange($event, i, 'drug')"
               />
             </td>
-            <td>{{ drug.id }}</td>
-            <td>{{ drug.name }}</td>
-            <td>{{ drug.price + "$" }}</td>
+            <td [routerLink]="['/drug', i]">{{ drug.id }}</td>
+            <td [routerLink]="['/drug', i]">{{ drug.name }}</td>
+            <td [routerLink]="['/drug', i]">{{ drug.price + "$" }}</td>
             <td>
               <button
                 [routerLink]="['/modify', i]"
@@ -104,11 +104,11 @@
             (change)="onCheckboxChange($event, i, 'patient')"
           />
         </td>
-        <td>{{ patient.cnp }}</td>
-        <td>{{ patient.firstName }}</td>
-        <td>{{ patient.lastName }}</td>
-        <td>{{ patient.phone }}</td>
-        <td>{{ patient.addressOne }}</td>
+        <td [routerLink]="['/patient', i]">{{ patient.cnp }}</td>
+        <td [routerLink]="['/patient', i]">{{ patient.firstName }}</td>
+        <td [routerLink]="['/patient', i]">{{ patient.lastName }}</td>
+        <td [routerLink]="['/patient', i]">{{ patient.phone }}</td>
+        <td [routerLink]="['/patient', i]">{{ patient.addressOne }}</td>
         <td>
           <button
             [routerLink]="['/modify', i]"
@@ -133,11 +133,11 @@
             (change)="onCheckboxChange($event, i, 'drug')"
           />
         </td>
-        <td>{{ drug.id }}</td>
-        <td>{{ drug.name }}</td>
-        <td>{{ drug.price + "$" }}</td>
-        <td>{{ drug.description }}</td>
-        <td>{{ drug.stock }}</td>
+        <td [routerLink]="['/drug', i]">{{ drug.id }}</td>
+        <td [routerLink]="['/drug', i]">{{ drug.name }}</td>
+        <td [routerLink]="['/drug', i]">{{ drug.price + "$" }}</td>
+        <td [routerLink]="['/drug', i]">{{ drug.description }}</td>
+        <td [routerLink]="['/drug', i]">{{ drug.stock }}</td>
         <td>
           <button
             [routerLink]="['/modify', i]"

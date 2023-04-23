@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Patient } from '../prototypes/patient.prototype';
 import { Drug } from '../prototypes/drug.prototype';
 import { PatientsService } from '../services/patients.service';
@@ -16,7 +16,8 @@ export class AddComponent implements OnInit {
   toBeAddedObject: Patient | Drug;
   submitPressed: boolean = false;
 
-  constructor(private route: ActivatedRoute,
+  constructor(private router: Router,
+              private route: ActivatedRoute,
               private ps: PatientsService,
               private ds: DrugsService) {}
 
@@ -79,6 +80,8 @@ export class AddComponent implements OnInit {
       } else {
         this.ds.addDrug(this.toBeAddedObject as Drug);
       }
+
+      this.router.navigate(['/']);
     }
 
     this.submitPressed = true;

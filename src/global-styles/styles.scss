@@ -129,6 +129,22 @@ span {
     margin: 0;
 }
 
+tr:not(:last-child) {
+    border-bottom: 1px solid $theme-gray;
+}
+
+td {
+    height: 70px;
+    word-wrap: break-word;
+}
+
+tbody {
+    tr:hover {
+        background-color: $theme-gray;
+        cursor: pointer;
+    }
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

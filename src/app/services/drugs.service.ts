@@ -26,4 +26,8 @@ export class DrugsService {
   modifyDrugData(id: number, newData: Drug) {
     this.drugs[id] = newData;
   }
+
+  setDrugs(drugs: Array<Drug>) {
+    this.drugs = drugs;
+  }
 }

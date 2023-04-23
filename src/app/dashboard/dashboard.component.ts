@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
     } else {
       this.drugs[i].markedForDeletion = event.target.checked;
     }
-
+    
     event.target.checked ? this.checkedCheckboxes++ : this.checkedCheckboxes--;
   }
 
@@ -40,6 +40,8 @@ export class DashboardComponent implements OnInit {
     this.patients = this.patients.filter(patient => patient.markedForDeletion != true);
     this.drugs = this.drugs.filter(drug => drug.markedForDeletion != true);
     this.checkedCheckboxes = 0;
+    this.ps.setPatients(this.patients);
+    this.ds.setDrugs(this.drugs);
   }
 
   ngOnInit(): void {

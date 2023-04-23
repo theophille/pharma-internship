@@ -1,0 +1,25 @@
+<main class="container-xxl cb">
+  <section class="mini-header mb-4">
+    <div>
+      <h1>{{ drug.name }}</h1>
+      <p>This is {{ drug.name }}'s data</p>
+    </div>
+    <button class="circle-button medium-square-btn green-btn">
+      <img width="20px" src="../../assets/icons/bell.png" alt="bell" />
+    </button>
+  </section>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item py-3" *ngFor="let item of drug | keyvalue">
+      <span style="font-weight: 600"> {{ item.key }} </span>:
+      {{ item.value ? item.value : "not set" }}
+    </li>
+  </ul>
+  <button
+    [routerLink]="['/modify', id]"
+    [queryParams]="{ type: 'drug' }"
+    class="form-theme-button-green-stroke"
+    style="width: 100%"
+  >
+    Modify
+  </button>
+</main>

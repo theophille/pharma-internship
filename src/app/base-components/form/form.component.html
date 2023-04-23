@@ -41,6 +41,27 @@
               Phone is invalid
             </p>
           </div>
+          <div class="col mb-3" style="padding: 0" *ngSwitchCase="'number'">
+            <input
+              [type]="col.type"
+              [placeholder]="col.placeholder"
+              [name]="col.name"
+              [required]="col.mandatory"
+              [ngModel]="col.value"
+              style="width: 100%"
+              ngModel
+              [positiveNumber]="true"
+              #positiveNumber="ngModel"
+            />
+            <p
+              class="error mx-3 mt-2"
+              *ngIf="
+                !positiveNumber.valid && (isSubmitted || positiveNumber.touched)
+              "
+            >
+              The number is invalid
+            </p>
+          </div>
           <div class="col mb-3" style="padding: 0" *ngSwitchCase="'id'">
             <input
               [type]="col.type"

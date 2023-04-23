@@ -6,7 +6,7 @@ export class Drug {
     public stock: number;
     public markedForDeletion: boolean;
 
-    constructor(id: string = '',
+    constructor(id: string = 'not assigned',
                 name: string = '',  
                 price: number = 0,
                 description: string = '',

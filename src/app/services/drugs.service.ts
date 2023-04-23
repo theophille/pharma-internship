@@ -22,4 +22,8 @@ export class DrugsService {
   getDrugs() {
     return this.drugs;
   }
+
+  modifyDrugData(id: number, newData: Drug) {
+    this.drugs[id] = newData;
+  }
 }

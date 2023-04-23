@@ -26,22 +26,22 @@ export class AddComponent implements OnInit {
     if(this.params.type == 'patient') {
       this.formArray = [
         [
-          { placeholder: 'First Name', name: 'firstName', type: 'text', mandatory: true },
-          { placeholder: 'Last Name', name: 'lastName', type: 'text', mandatory: true }
+          { placeholder: 'First Name', name: 'firstName', type: 'text', mandatory: true, value: '' },
+          { placeholder: 'Last Name', name: 'lastName', type: 'text', mandatory: true, value: '' }
         ],
         [
-          { placeholder: 'Email', name: 'email', type: 'email', mandatory: true }
+          { placeholder: 'Email', name: 'email', type: 'email', mandatory: true, value: '' }
         ],
         [
-          { placeholder: 'Date of Birth', name: 'dateOfBirth', type: 'date', mandatory: true },
-          { placeholder: 'CNP', name: 'cnp', type: 'id', mandatory: true }
+          { placeholder: 'Date of Birth', name: 'dateOfBirth', type: 'date', mandatory: true, value: '' },
+          { placeholder: 'CNP', name: 'cnp', type: 'id', mandatory: true, value: '' }
         ],
         [
-          { placeholder: 'Phone', name: 'phone', type: 'tel', mandatory: true }
+          { placeholder: 'Phone', name: 'phone', type: 'tel', mandatory: true, value: '' }
         ],
         [
-          { placeholder: 'Address 1', name: 'addressOne', type: 'text', mandatory: true },
-          { placeholder: 'Address 2 (optional)', name: 'addressTwo', type: 'text', mandatory: false }
+          { placeholder: 'Address 1', name: 'addressOne', type: 'text', mandatory: true, value: '' },
+          { placeholder: 'Address 2 (optional)', name: 'addressTwo', type: 'text', mandatory: false, value: '' }
         ]
       ]
 
@@ -49,14 +49,14 @@ export class AddComponent implements OnInit {
     } else {
         this.formArray = [
         [
-          { placeholder: 'Name', name: 'name', type: 'text', mandatory: true }
+          { placeholder: 'Name', name: 'name', type: 'text', mandatory: true, value: '' }
         ],
         [
-          { placeholder: 'Price', name: 'price', type: 'number', mandatory: true },
-          { placeholder: 'Stock', name: 'stock', type: 'number', mandatory: true }
+          { placeholder: 'Price', name: 'price', type: 'number', mandatory: true, value: '' },
+          { placeholder: 'Stock', name: 'stock', type: 'number', mandatory: true, value: '' }
         ],
         [
-          { placeholder: 'Description', name: 'description', type: 'text', mandatory: true }
+          { placeholder: 'Description', name: 'description', type: 'text', mandatory: true, value: '' }
         ]
       ]
 

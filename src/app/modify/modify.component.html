@@ -1,0 +1,24 @@
+<main class="container-xxl cb">
+  <section class="mini-header mb-4">
+    <div>
+      <h1>Modify</h1>
+      <p>Fill in the form below to add a new patient</p>
+    </div>
+    <button class="circle-button medium-square-btn green-btn">
+      <img width="20px" src="../../assets/icons/bell.png" alt="bell" />
+    </button>
+  </section>
+  <app-form
+    (formData)="onSubmit($event)"
+    [isSubmitted]="submitPressed"
+    [data]="formArray"
+  >
+    <div class="row">
+      <input
+        class="col form-theme-button-green"
+        type="submit"
+        [value]="'Modify ' + params.type"
+      />
+    </div>
+  </app-form>
+</main>

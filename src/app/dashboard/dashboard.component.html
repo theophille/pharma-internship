@@ -50,7 +50,11 @@
             <td>{{ patient.firstName }}</td>
             <td>{{ patient.lastName }}</td>
             <td>
-              <button class="circle-button small-square-btn green-btn">
+              <button
+                [routerLink]="['/modify', i]"
+                [queryParams]="{ type: 'patient' }"
+                class="circle-button small-square-btn green-btn"
+              >
                 M
               </button>
             </td>
@@ -74,7 +78,11 @@
             <td>{{ drug.name }}</td>
             <td>{{ drug.price + "$" }}</td>
             <td>
-              <button class="circle-button small-square-btn green-btn">
+              <button
+                [routerLink]="['/modify', i]"
+                [queryParams]="{ type: 'drug' }"
+                class="circle-button small-square-btn green-btn"
+              >
                 M
               </button>
             </td>
@@ -100,9 +108,15 @@
         <td>{{ patient.firstName }}</td>
         <td>{{ patient.lastName }}</td>
         <td>{{ patient.phone }}</td>
-        <td>{{ patient.address }}</td>
+        <td>{{ patient.addressOne }}</td>
         <td>
-          <button class="circle-button small-square-btn green-btn">M</button>
+          <button
+            [routerLink]="['/modify', i]"
+            [queryParams]="{ type: 'patient' }"
+            class="circle-button small-square-btn green-btn"
+          >
+            M
+          </button>
         </td>
       </tr>
     </table-list>
@@ -125,7 +139,13 @@
         <td>{{ drug.description }}</td>
         <td>{{ drug.stock }}</td>
         <td>
-          <button class="circle-button small-square-btn green-btn">M</button>
+          <button
+            [routerLink]="['/modify', i]"
+            [queryParams]="{ type: 'drug' }"
+            class="circle-button small-square-btn green-btn"
+          >
+            M
+          </button>
         </td>
       </tr>
     </table-list>

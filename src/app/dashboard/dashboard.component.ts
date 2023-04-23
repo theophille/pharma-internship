@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../prototypes/patient.prototype';
 import { Drug } from '../prototypes/drug.prototype';
+import { PatientsService } from '../services/patients.service';
+import { DrugsService } from '../services/drugs.service';
 
 @Component({
   selector: 'dashboard',
@@ -13,29 +15,16 @@ export class DashboardComponent implements OnInit {
   time: string;
   checkedCheckboxes:number = 0;
 
+  constructor(private ps: PatientsService, private ds: DrugsService) {}
+
   smallPatientsTableTitles: Array<string> = ['Check', 'CNP', 'First Name', 'Last Name', 'Modify'];
   smallDrugsTableTitles: Array<string> = ['Check', 'ID', 'Name', 'Price', 'Modify'];
   detailedPatientsTableTitles: Array<string> = ['Check', 'CNP', 'First Name', 'Last Name', 'Phone', 'Address', 'Modify'];
   detailedDrugsTableTitles: Array<string> = ['Check', 'ID', 'Name', 'Price', 'Description', 'Stock', 'Modify'];
 
-  patients: Array<Patient> = [
-    new Patient("64355", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false),
-    new Patient("64356", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false),
-    new Patient("64357", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false),
-    new Patient("64358", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false),
-    new Patient("64359", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false),
-    new Patient("64360", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false)
-  ];
+  patients: Array<Patient> = this.ps.getPatients();
 
-  drugs: Array<Drug> = [
-    new Drug("73421", "Kanamicin", 34, "For your eyes", 100, false),
-    new Drug("73422", "Kanamicin", 34, "For your eyes", 100, false),
-    new Drug("73423", "Kanamicin", 34, "For your eyes", 100, false),
-    new Drug("73424", "Kanamicin", 34, "For your eyes", 100, false),
-    new Drug("73425", "Kanamicin", 34, "For your eyes", 100, false),
-    new Drug("73426", "Kanamicin", 34, "For your eyes", 100, false),
-    new Drug("73427", "Kanamicin", 34, "For your eyes", 100, false)
-  ];
+  drugs: Array<Drug> = this.ds.getDrugs();
 
   onCheckboxChange(event: any, i: number, type: string) {
     if(type === 'patient') {

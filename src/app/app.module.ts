@@ -13,6 +13,7 @@ import { FormComponent } from './base-components/form/form.component';
 import { FormsModule } from '@angular/forms';
 import { PhoneValidatorDirective } from './directives/validators/phone.directive';
 import { CnpValidatorDirective } from './directives/validators/cnp.directive';
+import { PatientsService } from './services/patients.service';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -38,7 +39,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule
   ],
-  providers: [],
+  providers: [PatientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Patient } from '../prototypes/patient.prototype';
 import { Drug } from '../prototypes/drug.prototype';
+import { PatientsService } from '../services/patients.service';
+import { DrugsService } from '../services/drugs.service';
 
 @Component({
   selector: 'app-add',
@@ -14,7 +16,9 @@ export class AddComponent implements OnInit {
   toBeAddedObject: Patient | Drug;
   submitPressed: boolean = false;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,
+              private ps: PatientsService,
+              private ds: DrugsService) {}
 
   ngOnInit(): void {
     this.params = this.route.snapshot.queryParams;
@@ -61,11 +65,19 @@ export class AddComponent implements OnInit {
   }
 
   onSubmit(event: any) {
-    for(const [key, value] of Object.entries(event.value)) {
-      if(typeof this.toBeAddedObject[key] === 'number') {
-        this.toBeAddedObject[key] = Number(value);
+    if(event.valid) {
+      for(const [key, value] of Object.entries(event.value)) {
+        if(typeof this.toBeAddedObject[key] === 'number') {
+          this.toBeAddedObject[key] = Number(value);
+        } else {
+          this.toBeAddedObject[key] = value;
+        }
+      }
+      
+      if(this.params.type === 'patient') {
+        this.ps.addPatient(this.toBeAddedObject as Patient);
       } else {
-        this.toBeAddedObject[key] = value;
+        this.ds.addDrug(this.toBeAddedObject as Drug);
       }
     }
 

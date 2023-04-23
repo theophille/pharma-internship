@@ -12,6 +12,8 @@ export class FormComponent {
   @Input() data: Array<any>;
   @Input() isSubmitted: boolean;
   @Output('formData') getNgFormEvent = new EventEmitter<any>();
+
+  today:string = new Date().toISOString().split('T')[0];
   
   getNgForm(form: NgForm) {
     this.getNgFormEvent.emit(form);

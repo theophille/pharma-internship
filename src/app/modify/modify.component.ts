@@ -51,6 +51,8 @@ export class ModifyComponent implements OnInit {
           { placeholder: 'Address 2 (optional)', name: 'addressTwo', type: 'text', mandatory: false, value: patient.addressTwo }
         ]
       ]
+
+      console.log(patient);
     } else {
         let drugs: Array<Drug> = this.ds.getDrugs();
         this.toBeAddedObject = drugs[this.id];

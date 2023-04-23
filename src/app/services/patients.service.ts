@@ -6,12 +6,12 @@ import { Patient } from '../prototypes/patient.prototype';
 })
 export class PatientsService {
   private patients: Array<Patient> = [
-    new Patient("64355", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false, '04/12/2002'),
-    new Patient("64356", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false, '03/12/2002'),
-    new Patient("64357", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false, '02/12/2002'),
-    new Patient("64358", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false, '01/12/2002'),
-    new Patient("64359", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false, '03/15/2002'),
-    new Patient("64360", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false,  '03/15/2002')
+    new Patient("6435545454654", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false, '2002-04-12'),
+    new Patient("6435545454655", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false, '2002-04-13'),
+    new Patient("6435545454656", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false, '2002-04-14'),
+    new Patient("6435545454657", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false, '2002-04-15'),
+    new Patient("6435545454658", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false, '2002-04-16'),
+    new Patient("6435545454659", "John", "Doe", "g@g.com", "0733784830", "Bucharest", '', false,  '2002-04-17')
   ];
 
   addPatient(patient: Patient) {

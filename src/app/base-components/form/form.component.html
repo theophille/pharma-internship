@@ -81,6 +81,25 @@
               CNP is invalid
             </p>
           </div>
+          <div class="col mb-3" style="padding: 0" *ngSwitchCase="'date'">
+            <input
+              [type]="col.type"
+              [placeholder]="col.placeholder"
+              [name]="col.name"
+              [required]="col.mandatory"
+              [ngModel]="col.value"
+              style="width: 100%"
+              [max]="today"
+              ngModel
+              #required="ngModel"
+            />
+            <p
+              class="error mx-3 mt-2"
+              *ngIf="!required.valid && (isSubmitted || required.touched)"
+            >
+              Required field
+            </p>
+          </div>
           <div class="col mb-3" style="padding: 0" *ngSwitchDefault>
             <input
               [type]="col.type"
